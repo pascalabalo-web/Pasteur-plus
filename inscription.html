@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inscription | Prophetic Step Ministry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="inner-page">
+<header class="inner-header"><a class="brand" href="index.html"><span class="brand-mark">✝</span><span><b>PROPHETIC STEP</b><small>MINISTRY</small></span></a><a href="index.html" class="back"><i class="fa-solid fa-arrow-left"></i> Accueil</a></header>
+<main class="register-wrap">
+  <div class="register-decoration">✝</div>
+  <section class="register-card">
+    <div class="card-cross">✝</div><span class="eyebrow dark">ESPACE PASTEUR</span><h1>Bienvenue dans votre espace</h1>
+    <p>Créez votre compte pour retrouver vos thèmes IA depuis n'importe quel appareil.</p>
+    <div class="auth-tabs"><button type="button" class="auth-tab active" data-auth="register">Créer un compte</button><button type="button" class="auth-tab" data-auth="login">Se connecter</button></div>
+    <form id="registerForm" novalidate>
+      <div class="two-fields">
+        <label>Prénom<input id="prenom" type="text" placeholder="Votre prénom" autocomplete="given-name" required></label>
+        <label>Nom<input id="nom" type="text" placeholder="Votre nom" autocomplete="family-name" required></label>
+      </div>
+      <label>Localisation<input id="localisation" type="text" placeholder="Ville / Pays" required></label>
+      <label>Numéro de téléphone<input id="telephone" type="tel" placeholder="+228 90 00 00 00" autocomplete="tel" required></label>
+      <label>Mot de passe<input id="password" type="password" placeholder="Au moins 8 caractères" autocomplete="new-password" minlength="8" required></label>
+      <div id="formError" class="form-error"></div>
+      <button class="btn btn-gold full" type="submit">Continuer <i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+    <small class="privacy"><i class="fa-solid fa-shield-halved"></i> Votre compte et vos thèmes IA sont enregistrés de manière sécurisée sur le serveur.</small>
+    <form id="loginForm" novalidate style="display:none">
+      <label>Numéro de téléphone<input id="loginTelephone" type="tel" placeholder="+228 90 00 00 00" autocomplete="tel"></label>
+      <label>Mot de passe<input id="loginPassword" type="password" placeholder="Votre mot de passe" autocomplete="current-password"></label>
+      <div id="loginError" class="form-error"></div>
+      <button class="btn btn-gold full" type="submit">Se connecter <i class="fa-solid fa-arrow-right"></i></button>
+    </form>
+  </section>
+</main>
+<footer class="simple-footer"><strong>ABALO PASCAL</strong><span>Prophetic Step Ministry</span></footer>
+<script src="js/app.js"></script>
+<script src="js/inscription.js"></script>
+</body>
+</html>

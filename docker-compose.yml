@@ -1,0 +1,31 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: prophetic_step
+      POSTGRES_USER: prophetic
+      POSTGRES_PASSWORD: prophetic_password_change_me
+    volumes:
+      - prophetic_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U prophetic -d prophetic_step"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://prophetic:prophetic_password_change_me@db:5432/prophetic_step
+      DATABASE_SSL: "false"
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      OPENAI_MODEL: gpt-5.6-luna
+      SESSION_DAYS: 30
+    depends_on:
+      db:
+        condition: service_healthy
+volumes:
+  prophetic_pgdata:

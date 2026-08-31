@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: prophetic-step
+    runtime: docker
+    healthCheckPath: /api/health
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_SSL
+        value: "true"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-5.6-luna
+      - key: SESSION_DAYS
+        value: "30"
+      - key: NODE_ENV
+        value: production
